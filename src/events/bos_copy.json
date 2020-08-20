@@ -1,0 +1,30 @@
+{
+  "events": [
+    {
+      "version": "1.0",
+      "eventId": "2a513199-bbb9-4ac7-b12a-60213c26810d",
+      "eventOrigin": "bos:realtime",
+      "eventTime": "2018-09-05T02:28:49Z",
+      "eventType": "CopyObject",
+      "content": {
+        "userId": "c7ac82ae",
+        "domain": "bj.bcebos.com",
+        "bucket": "bucketname",
+        "object": "src/",
+        "etag": "977b9623a15e520c663ac5ff6647e881",
+        "contentType": "application/octet-stream",
+        "filesize": 24414,
+        "lastModified": "2018-09-05T02:28:49Z",
+        "credentials": {
+          "accessKeyId": "f3ade7c6b1a911e8bb6821a724cc157d",
+          "secretAccessKey": "07381a56d35e4b1193a418362221de81",
+          "sessionToken": "ZGZiM2M3MmU4Mjk4NGQ2MGEzYTNhYTAyMDE3NTZmZmV8AAAAAIcCAADaE18IR6jSaVWlMHxZG5wzb/7AQas3Y6V",
+          "expiration": "2018-02-22T11:22:33Z"
+        },
+        "xVars": {
+          "saveUrl": "http://xxx.com/ocr"
+        }
+      }
+    }
+  ]
+}

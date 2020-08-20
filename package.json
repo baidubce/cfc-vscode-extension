@@ -1,0 +1,333 @@
+{
+	"name": "cfc-vscode-extension",
+	"displayName": "Baidu Serverless",
+	"icon": "resources/bce.jpg",
+	"description": "An extension for working with Baidu Cloud CFC",
+	"version": "1.0.1",
+	"publisher": "BaiduBCE",
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.helloCFC",
+		"onView:localFunctions"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "BCE Serverless Configuration",
+			"properties": {
+				"cfc.extension.bsamcli.location": {
+					"type": "string",
+					"default": "",
+					"description": "BSAM CLI location on your host."
+				},
+				"cfc.extension.skipPullImage": {
+					"type": "boolean",
+					"default": false,
+					"description": "whether skip pull docker image when invoke local functions. If you enable this option, the image you are using may not be the latest."
+				},
+				"cfc.extension.maxDetectDepth": {
+					"type": "number",
+					"default": 4,
+					"description": "The maximum subfolder depth within a workspace that the extension will search for BSAM Template files."
+				},
+				"cfc.extension.deployEndpoint": {
+					"type": "string",
+					"default": "",
+					"description": "The custom service endpoint that you want to deploy function to."
+				},
+				"cfc.extension.logLevel": {
+					"type": "string",
+					"default": "info",
+					"enum": [
+						"error",
+						"warn",
+						"info",
+						"debug"
+					],
+					"enumDescriptions": [
+						"Errors Only",
+						"Errors and Warnings",
+						"Errors, Warnings, and Info",
+						"Errors, Warnings, Info, and Debug"
+					],
+					"description": "The CFC extension log level."
+				}
+			}
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "cfc-explorer",
+					"title": "BaiduBCE Serverless",
+					"icon": "resources/standard_cfc.svg"
+				}
+			]
+		},
+		"views": {
+			"cfc-explorer": [
+				{
+					"id": "localFunctions",
+					"name": "本地函数"
+				},
+				{
+					"id": "remoteFunctions",
+					"name": "云端函数"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "extension.refreshLocal",
+				"title": "test",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "extension.refreshRemote",
+				"title": "test",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "extension.gotoFunction",
+				"title": "Edit Function",
+				"icon": {
+					"light": "resources/light/edit.svg",
+					"dark": "resources/dark/pencil-fill.svg"
+				}
+			},
+			{
+				"command": "extension.addEvent",
+				"title": "创建测试事件"
+			},
+			{
+				"command": "extension.gotoTemplate",
+				"title": "跳转到配置"
+			},
+			{
+				"command": "extension.deployFunction",
+				"title": "上传函数"
+			},
+			{
+				"command": "extension.localInstallAndBuild",
+				"title": "安装依赖与编译"
+			},
+			{
+				"command": "extension.detectCli",
+				"title": "CFC: Detect BSAM Cli"
+			},
+			{
+				"command": "extension.localInvoke",
+				"title": "Local Invoke",
+				"icon": {
+					"light": "resources/light/play.svg",
+					"dark": "resources/dark/play-fill.svg"
+				}
+			},
+			{
+				"command": "extension.localDebug",
+				"title": "Local Debug",
+				"icon": {
+					"light": "resources/light/play.svg",
+					"dark": "resources/dark/bug-fill.svg"
+				}
+			},
+			{
+				"command": "extension.createFunction",
+				"title": "创建函数"
+			},
+			{
+				"command": "extension.bindAccount",
+				"title": "绑定新账户"
+			},
+			{
+				"command": "extension.switchRegion",
+				"title": "切换地域"
+			},
+			{
+				"command": "extension.switchAccount",
+				"title": "切换账户"
+			},
+			{
+				"command": "extension.remoteInvoke",
+				"title": "Remote Invoke",
+				"icon": {
+					"light": "resources/light/play-fill.svg",
+					"dark": "resources/dark/play-fill.svg"
+				}
+			},
+			{
+				"command": "extension.download",
+				"title": "Download Function",
+				"icon": {
+					"light": "resources/light/download-cloud-fill.svg",
+					"dark": "resources/dark/download-cloud-fill.svg"
+				}
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "extension.refreshLocal",
+					"when": "view == localFunctions",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.createFunction",
+					"when": "view == localFunctions"
+				},
+				{
+					"command": "extension.bindAccount",
+					"when": "view == remoteFunctions",
+					"group": "2"
+				},
+				{
+					"command": "extension.switchRegion",
+					"when": "view == remoteFunctions"
+				},
+				{
+					"command": "extension.switchAccount",
+					"when": "view == remoteFunctions",
+					"group": "2"
+				},
+				{
+					"command": "extension.refreshRemote",
+					"when": "view == remoteFunctions",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "extension.localInvoke",
+					"when": "view == localFunctions && viewItem == UnDebugNode",
+					"group": "inline"
+				},
+				{
+					"command": "extension.gotoFunction",
+					"when": "view == localFunctions && viewItem == UnDebugNode",
+					"group": "inline"
+				},
+				{
+					"command": "extension.addEvent",
+					"when": "view == localFunctions && viewItem == UnDebugNode",
+					"group": "group1"
+				},
+				{
+					"command": "extension.gotoTemplate",
+					"when": "view == localFunctions && viewItem == UnDebugNode",
+					"group": "group1"
+				},
+				{
+					"command": "extension.localInstallAndBuild",
+					"when": "view == localFunctions && viewItem == UnDebugNode",
+					"group": "group1"
+				},
+				{
+					"command": "extension.deployFunction",
+					"when": "view == localFunctions && viewItem == UnDebugNode",
+					"group": "group2"
+				},
+				{
+					"command": "extension.localInvoke",
+					"when": "view == localFunctions && viewItem == DebugNode",
+					"group": "inline"
+				},
+				{
+					"command": "extension.gotoFunction",
+					"when": "view == localFunctions && viewItem == DebugNode",
+					"group": "inline"
+				},
+				{
+					"command": "extension.localDebug",
+					"when": "view == localFunctions && viewItem == DebugNode",
+					"group": "inline"
+				},
+				{
+					"command": "extension.addEvent",
+					"when": "view == localFunctions && viewItem == DebugNode",
+					"group": "group1"
+				},
+				{
+					"command": "extension.gotoTemplate",
+					"when": "view == localFunctions && viewItem == DebugNode",
+					"group": "group1"
+				},
+				{
+					"command": "extension.localInstallAndBuild",
+					"when": "view == localFunctions && viewItem == DebugNode",
+					"group": "group1"
+				},
+				{
+					"command": "extension.deployFunction",
+					"when": "view == localFunctions && viewItem == DebugNode",
+					"group": "group2"
+				},
+				{
+					"command": "extension.remoteInvoke",
+					"when": "view == remoteFunctions && viewItem == RemoteFunctionNode",
+					"group": "inline"
+				},
+				{
+					"command": "extension.download",
+					"when": "view == remoteFunctions && viewItem == RemoteFunctionNode",
+					"group": "inline"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/assert": "^1.5.1",
+		"@types/chai": "^4.2.11",
+		"@types/mocha": "^7.0.2",
+		"@typescript-eslint/eslint-plugin": "^2.29.0",
+		"@typescript-eslint/parser": "^2.29.0",
+		"assert": "^2.0.0",
+		"chai": "^4.2.0",
+		"eslint": "^6.8.0",
+		"eslint-config-google": "^0.14.0",
+		"mocha": "^7.1.1",
+		"typescript": "^3.9.6",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"@baiducloud/sdk": "^1.0.0-rc.18",
+		"@types/adm-zip": "^0.4.33",
+		"@types/compare-versions": "^3.3.0",
+		"@types/cross-spawn": "^6.0.1",
+		"@types/glob": "^7.1.1",
+		"@types/js-yaml": "^3.12.3",
+		"@types/superagent": "^4.1.7",
+		"@types/tcp-port-used": "^1.0.0",
+		"@types/vscode": "^1.46.0",
+		"@types/winston": "^2.4.4",
+		"adm-zip": "^0.4.14",
+		"compare-versions": "^3.6.0",
+		"configparser": "^0.3.6",
+		"cross-spawn": "^7.0.2",
+		"glob": "^7.1.6",
+		"js-yaml": "^3.13.1",
+		"moment": "^2.26.0",
+		"superagent": "^5.2.2",
+		"tcp-port-used": "^1.0.1",
+		"ts-node": "^8.8.1",
+		"winston": "^3.2.1"
+	}
+}

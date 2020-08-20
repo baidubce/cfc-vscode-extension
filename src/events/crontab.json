@@ -1,0 +1,10 @@
+{
+  "account": "c7ac82ae",
+  "uuid": "d9f671cc-1327-41f3-be33-f1d442f5bf8d",
+  "function_brn": "brn:bce:cfc:bj:640c8817bd1de2928d47256dd0620ce5:function:crontabtrigger:$LATEST",
+  "source": "cfc:crontab",
+  "version": "0",
+  "detail_type": "Scheduled Event",
+  "time": "2019-05-20T08:03:00Z",
+  "id": "4ab17338-b889-4905-b3a5-a5a9cff68677"
+}

@@ -1,0 +1,58 @@
+{
+  "version": "2.0",
+  "session": {
+    "new": true,
+    "sessionId": "123456789012",
+    "attributes": {}
+  },
+  "context": {
+    "System": {
+      "user": {
+        "userId": "user_id_123",
+        "accessToken": "a408ae546bf943e3be1b5194"
+      },
+      "application": {
+        "applicationId": "personal_income_tax"
+      },
+      "device": {
+        "deviceId": "device_id_123",
+        "supportedInterfaces": {
+          "VoiceInput": {},
+          "VoiceOutput": {},
+          "AudioPlayer": {},
+          "VideoPlayer": {
+            "preferedVideoCodec": [
+              "H.264"
+            ],
+            "preferedAudioCodec": [
+              "MP3"
+            ],
+            "preferedBitrate": "480P",
+            "preferedWidth": 854,
+            "preferedHeight": 480
+          },
+          "Display": {}
+        }
+      }
+    },
+    "AudioPlayer": {
+      "token": "164182b6954cb7a94a30b",
+      "offsetInMilliSeconds": 300,
+      "playerActivity": "PLAYING"
+    },
+    "VideoPlayer": {
+      "token": "164182b6954cb7a94a30b",
+      "error": {
+        "type": "MEDIA_ERROR_INVALID_REQUEST",
+        "message": "invalid request"
+      },
+      "offsetInMilliseconds": 500,
+      "playerActivity": "PLAYING"
+    }
+  },
+  "request": {
+    "type": "LaunchRequest",
+    "requestId": "1234",
+    "timestamp": "1499790258"
+  }
+}

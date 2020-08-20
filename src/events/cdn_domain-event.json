@@ -1,0 +1,15 @@
+{
+  "events": [
+    {
+      "eventName": "CdnDomainStarted",
+      "eventVersion": "1.0.0",
+      "eventSource": "cdn",
+      "eventTime": 1551085930,
+      "userId": "9b2aa053",
+      "eventDetail": {
+        "domain": "www.test.com",
+        "logTime": "2019-02-26T12:00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "Records": [
+    {
+      "EventId": "c7ac82ae__test_only_sl-0-43110",
+      "Kafka": {
+        "key": "",
+        "Value": "MA==",
+        "Topic": "c7ac82ae__test_only_sl",
+        "Partition": 0,
+        "Offset": 43110,
+        "Timestamp": 1553151704.6529999
+      },
+      "EventName": "bce:kafka:record",
+      "EventSourceBrn": "c7ac82ae__test_only_sl",
+      "EventSource": "bce:kafka"
+    },
+    {
+      "EventId": "c7ac82ae__test_only_sl-0-43111",
+      "Kafka": {
+        "Key": "",
+        "Value": "MQ==",
+        "Topic": "c7ac82ae__test_only_sl",
+        "Partition": 0,
+        "Offset": 43111,
+        "Timestamp": 1553151704.6529999
+      },
+      "EventName": "bce:kafka:record",
+      "EventSourceBrn": "c7ac82ae__test_only_sl",
+      "EventSource": "bce:kafka"
+    }
+  ]
+}

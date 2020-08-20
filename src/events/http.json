@@ -1,0 +1,29 @@
+{
+  "resource": "/test/{proxy+}",
+  "path": "/test/aaa/bbb",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+    "Connection": "close",
+    "Upgrade-Insecure-Requests": "1",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36",
+    "X-Bce-Request-Id": "f6cb833e-f818-4b80-b30c-fff437e69886"
+  },
+  "queryStringParameters": {
+    "a": "111"
+  },
+  "pathParameters": {
+    "proxy": "aaa/bbb"
+  },
+  "requestContext": {
+    "stage": "cfc",
+    "requestId": "f6cb833e-f818-4b80-b30c-fff437e69886",
+    "resourcePath": "/test/{proxy+}",
+    "httpMethod": "GET",
+    "apiId": "7grmt1xfky5jf"
+  },
+  "body": "",
+  "isBase64Encoded": false
+}

@@ -1,0 +1,49 @@
+{
+  "version": "v2.0",
+  "session": {
+    "new": false,
+    "sessionId": "123456789012",
+    "attributes": {
+      "path": "/\u5c0f\u5b66\u5965\u6570/\u4e00\u5e74\u7ea7\u7ec4\u5408\u6570\u5b66\uff081\uff09",
+      "page": "video"
+    }
+  },
+  "context": {
+    "System": {
+      "user": {
+        "userId": "1234",
+        "userInfo": {
+          "account": []
+        }
+      },
+      "application": {
+        "applicationId": "33c78c8f-22db-4d6a-bfd5-075d264377b7"
+      },
+      "device": {
+        "deviceId": "30e36bfaae1c30ff9707b3f2d4e1b63c",
+        "supportedInterfaces": {
+          "VoiceInput": {},
+          "VoiceOutput": {},
+          "AudioPlayer": {},
+          "Display": {},
+          "VideoPlayer": {}
+        }
+      },
+      "apiAccessToken": "v6T84SUT+tFuZ0sSOFZxMv0g68JfA",
+      "apiEndPoint": "https://xiaodu.baidu.com"
+    },
+    "VideoPlayer": {
+      "token": "IvaJvui3r+e6v+i1sOS4gOi1sCI=",
+      "offsetInMilliseconds": 0,
+      "playerActivity": "PLAYING"
+    }
+  },
+  "request": {
+    "token": "IvaJvui3r+e6v+i1sOS4gOi1sCI=",
+    "offsetInMilliseconds": 18792,
+    "type": "VideoPlayer.ProgressReportIntervalElapsed",
+    "requestId": "1234",
+    "timestamp": "1535443815",
+    "dialogRequestId": ""
+  }
+}

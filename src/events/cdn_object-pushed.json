@@ -1,0 +1,15 @@
+{
+  "events": [
+    {
+      "eventName": "CachedObjectsPushed",
+      "eventVersion": "1.0.0",
+      "eventSource": "cdn",
+      "eventTime": 1551085930,
+      "userId": "9b2aa053",
+      "eventDetail": {
+        "taskId": "eJwzMTU3NjQ2MXBIM0tMTTJKNtMklIMkwwsEo0AAbMLeg==",
+        "status": "completed"
+      }
+    }
+  ]
+}
